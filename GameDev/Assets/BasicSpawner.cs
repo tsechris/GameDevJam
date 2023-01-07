@@ -53,6 +53,10 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
     {
       data.direction += Vector3.right;
     }
+    if (Input.GetKey(KeyCode.Space))
+    {
+      data.direction += Vector3.up;
+    }
 
     input.Set(data);
 
