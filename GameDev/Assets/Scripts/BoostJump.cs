@@ -17,9 +17,9 @@ public class BoostJump : MonoBehaviour {
     IEnumerator boostPlayerJump(GameObject player)
     {
 		NetworkCharacterControllerPrototype characterController = player.GetComponent<NetworkCharacterControllerPrototype>();
-        characterController.jumpImpulse = 0.9f;
+        characterController.jumpImpulse = 10f;
         yield return new WaitForSeconds(20);
-        characterController.jumpImpulse = 0.6f;
+        characterController.jumpImpulse = 5f;
     }
 
     private void OnTriggerEnter(Collider other)
