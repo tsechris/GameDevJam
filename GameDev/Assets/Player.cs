@@ -13,14 +13,14 @@ public class Player : NetworkBehaviour
     public override void FixedUpdateNetwork()
     {
         if(GetInput(out NetworkInputData data))
-            if (data.direction != Vector3.up)
+        
+        {
+            if (data.jump)
             {
-                data.direction.Normalize();
-                _cc.Move(multiplier * data.direction * Runner.DeltaTime);
+                _cc.Jump(false);
             }
-            else
-            {
-                _cc.Jump();
-            }
+            data.direction.Normalize();
+            _cc.Move(multiplier * data.direction * Runner.DeltaTime);
+        }    
     }
 }
