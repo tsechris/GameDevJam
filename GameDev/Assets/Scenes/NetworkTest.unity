@@ -154,9 +154,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerPrefab:
     RawGuidValue: 78a0d265075694343af0f06675b74ecc
+<<<<<<< HEAD
   hostButton: {fileID: 1091635246}
   sessionName: {fileID: 427257842}
   menuUIGameObject: {fileID: 1148235383}
+=======
+>>>>>>> parent of e737ff2 (Added room codes)
 --- !u!4 &290947997
 Transform:
   m_ObjectHideFlags: 0
@@ -172,6 +175,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &304583053
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +555,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567790975}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> parent of e737ff2 (Added room codes)
 --- !u!1 &871289764
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,6 +654,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1091635244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,6 +1226,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615347151}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> parent of e737ff2 (Added room codes)
 --- !u!1 &1643585809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,6 +1312,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1664873300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,6 +1448,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664873300}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> parent of e737ff2 (Added room codes)
 --- !u!1 &1891797041
 GameObject:
   m_ObjectHideFlags: 0

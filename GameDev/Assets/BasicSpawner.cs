@@ -5,18 +5,10 @@ using UnityEngine;
 using Fusion;
 using Fusion.Sockets;
 using UnityEngine.SceneManagement;
-// using desertUI;
-using TMPro;
-using UnityEngine.UI;
 
 public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
 {
   [SerializeField] private NetworkPrefabRef _playerPrefab;
-
-  [SerializeField] private Button hostButton;
-  [SerializeField] private TMP_InputField sessionName;
-  [SerializeField] private GameObject menuUIGameObject;
-
   private Dictionary<PlayerRef, NetworkObject> _spawnedCharacters = new Dictionary<PlayerRef, NetworkObject>();
 
 
@@ -94,85 +86,22 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
       Scene = SceneManager.GetActiveScene().buildIndex,
       SceneManager = gameObject.AddComponent<NetworkSceneManagerDefault>()
     });}
-  async void StartGameCode(GameMode mode, string sessionNameBox)
-  {
-    // Create the Fusion runner and let it know that we will be providing user input
-    _runner = gameObject.AddComponent<NetworkRunner>();
-    _runner.ProvideInput = true;
-
-    // Start or join (depends on gamemode) a session with a specific name
-    await _runner.StartGame(new StartGameArgs()
-    {
-      GameMode = mode,
-      SessionName = sessionNameBox,
-      Scene = SceneManager.GetActiveScene().buildIndex,
-      SceneManager = gameObject.AddComponent<NetworkSceneManagerDefault>()
-    });}
-
 
   private NetworkRunner _runner;
 
-  // private void OnGUI()
-  // {
-  //   if (_runner == null)
-  //   {
-  //     if (GUI.Button(new Rect(0,0,200,40), "Host"))
-  //     {
-  //         StartGame(GameMode.Host);
-  //     }
-  //     if (GUI.Button(new Rect(0,40,200,40), "Join"))
-  //     {
-  //         StartGame(GameMode.Client);
-  //     }
-  //   }
-  // }
-  private void Start() {
-    hostButton.onClick.AddListener(() => {
-        HandleHostButtonPressed();
-    });
-    sessionName.onValueChanged.AddListener((text) => {
-        Debug.Log($"Session Code: {text}");
-    });
+  private void OnGUI()
+  {
+    if (_runner == null)
+    {
+      if (GUI.Button(new Rect(0,0,200,40), "Host"))
+      {
+          StartGame(GameMode.Host);
+      }
+      if (GUI.Button(new Rect(0,40,200,40), "Join"))
+      {
+          StartGame(GameMode.Client);
+      }
+    }
   }
-  public void HandleHostButtonPressed() {
-      hostButton.interactable = false;
-      Debug.Log("Host Button Pressed");
-      // StartGame(GameMode.Host);
-      StartGameCode(GameMode.Host, sessionName.text);
-      HideUIMenu();
-  } 
-
-  public void HandleJoinButtonPressed() {
-      hostButton.interactable = false;
-      // StartGame(GameMode.Client);
-      StartGameCode(GameMode.Client, sessionName.text);
-      HideUIMenu();
-  }
-
-  // Function to hide the Menu UI
-  public void HideUIMenu() {
-      // Hide the menu
-      // Hide host button
-      hostButton.gameObject.SetActive(false);
-      // Hide join button
-      // joinButton.gameObject.SetActive(false);
-      // Hide session name
-      sessionName.gameObject.SetActive(false);
-      // Hide the menu
-      menuUIGameObject.SetActive(false);
-  }
-  // Function to show the Menu UI
-  public void ShowUIMenu() {
-      // ShowKLOds the menu
-      // Show host button
-      hostButton.gameObject.SetActive(true);
-      // Show join button
-      // joinButton.gameObject.SetActive(true);
-      // Show session name
-      sessionName.gameObject.SetActive(true);
-      // Show the menu
-      menuUIGameObject.SetActive(true);
-  }
-
 }
 
