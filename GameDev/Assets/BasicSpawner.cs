@@ -61,9 +61,9 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
     {
       data.direction += Vector3.right;
     }
-    if (Input.GetKey(KeyCode.Space))
+    if (Input.GetKeyDown(KeyCode.Space))
     {
-      data.direction += Vector3.up;
+      data.jump = true;
     }
 
     input.Set(data);
@@ -98,6 +98,7 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
       Scene = SceneManager.GetActiveScene().buildIndex,
       SceneManager = gameObject.AddComponent<NetworkSceneManagerDefault>()
     });}
+  
   async void StartGameCode(GameMode mode, string sessionNameBox)
   {
     // Create the Fusion runner and let it know that we will be providing user input
@@ -116,20 +117,21 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
 
   private NetworkRunner _runner;
 
-  // private void OnGUI()
-  // {
-  //   if (_runner == null)
-  //   {
-  //     if (GUI.Button(new Rect(0,0,200,40), "Host"))
-  //     {
-  //         StartGame(GameMode.Host);
-  //     }
-  //     if (GUI.Button(new Rect(0,40,200,40), "Join"))
-  //     {
-  //         StartGame(GameMode.Client);
-  //     }
-  //   }
-  // }
+  private void OnGUI()
+  {
+    if (_runner == null)
+    {
+      if (GUI.Button(new Rect(0,0,200,40), "Host"))
+      {
+          StartGame(GameMode.Host);
+      }
+      if (GUI.Button(new Rect(0,40,200,40), "Join"))
+      {
+          StartGame(GameMode.Client);
+      }
+    }
+  }
+
   private void Start() {
     hostButton.onClick.AddListener(() => {
         HandleHostButtonPressed();

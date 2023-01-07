@@ -17,8 +17,8 @@ public class BoostSpeed : MonoBehaviour {
     IEnumerator boostPlayerSpeed(GameObject player)
     {
 		NetworkCharacterControllerPrototype characterController = player.GetComponent<NetworkCharacterControllerPrototype>();
-        characterController.maxSpeed = 50f;
-        characterController.acceleration = 50f;
+        characterController.maxSpeed = 10f;
+        characterController.acceleration = 20f;
         yield return new WaitForSeconds(20);
         characterController.maxSpeed = 4f;
         characterController.acceleration = 10f;
