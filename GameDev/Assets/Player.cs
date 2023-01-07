@@ -20,7 +20,7 @@ public class Player : NetworkBehaviour
             }
             else
             {
-                _cc.Jump(false,0.8f);
+                _cc.Jump();
             }
     }
 }
