@@ -14,6 +14,7 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
   [SerializeField] private NetworkPrefabRef _playerPrefab;
 
   [SerializeField] private Button hostButton;
+  [SerializeField] private Button joinButton;
   [SerializeField] private TMP_InputField sessionName;
   [SerializeField] private GameObject menuUIGameObject;
 
@@ -136,6 +137,9 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
     hostButton.onClick.AddListener(() => {
         HandleHostButtonPressed();
     });
+    joinButton.onClick.AddListener(() => {
+        HandleJoinButtonPressed();
+    });
     sessionName.onValueChanged.AddListener((text) => {
         Debug.Log($"Session Code: {text}");
     });
@@ -143,15 +147,15 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
   public void HandleHostButtonPressed() {
       hostButton.interactable = false;
       Debug.Log("Host Button Pressed");
-      // StartGame(GameMode.Host);
-      StartGameCode(GameMode.Host, sessionName.text);
+      StartGame(GameMode.Host);
+      // StartGameCode(GameMode.Host, sessionName.text);
       HideUIMenu();
   } 
 
   public void HandleJoinButtonPressed() {
       hostButton.interactable = false;
-      // StartGame(GameMode.Client);
-      StartGameCode(GameMode.Client, sessionName.text);
+      StartGame(GameMode.Client);
+      // StartGameCode(GameMode.Client, sessionName.text);
       HideUIMenu();
   }
 
@@ -169,7 +173,6 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
   }
   // Function to show the Menu UI
   public void ShowUIMenu() {
-      // ShowKLOds the menu
       // Show host button
       hostButton.gameObject.SetActive(true);
       // Show join button
