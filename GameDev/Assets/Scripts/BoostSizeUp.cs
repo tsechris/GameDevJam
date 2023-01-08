@@ -5,7 +5,7 @@ using DG.Tweening;
 public class BoostSizeUp : MonoBehaviour {
 	
 	bool triggered = false;
-
+    
 	// Before rendering each frame..
 	void Update () 
 	{
