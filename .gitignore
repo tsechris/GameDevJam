@@ -58,3 +58,9 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Binaries
+GameDev/TestBuilds/*
+
+# User settings
+GameDev/ProjectSettings/*
+GameDev/UserSettings/*
