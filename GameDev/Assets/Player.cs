@@ -15,8 +15,8 @@ public class Player : NetworkBehaviour
     }
     public override void FixedUpdateNetwork()
     {
-        if(GetInput(out NetworkInputData data))
-        
+        if (GetInput(out NetworkInputData data))
+
         {
             if (data.jump)
             {
@@ -27,8 +27,11 @@ public class Player : NetworkBehaviour
             _cc.Move(multiplier * data.direction * Runner.DeltaTime);
             playerAnim.SetBool("isRunning", true);
             playerAnim.SetBool("isJumping", false);
-        }    
-        playerAnim.SetBool("isRunning", false) ;
+        }
+        else
+        {
+            playerAnim.SetBool("isRunning", false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
