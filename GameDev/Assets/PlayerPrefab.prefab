@@ -240,6 +240,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ostrich
       objectReference: {fileID: 0}
+    - target: {fileID: 5073030459681092039, guid: 9502612aee48856499186d42cc55e5d2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 72ed065f2de2580418e3dedcdcf3b6eb, type: 2}
+    - target: {fileID: 5073030459681092039, guid: 9502612aee48856499186d42cc55e5d2, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65e93f456974fd040b4414d488acc6d3, type: 2}
     - target: {fileID: 5715461346774922676, guid: 9502612aee48856499186d42cc55e5d2, type: 3}
       propertyPath: m_RootOrder
       value: 0
