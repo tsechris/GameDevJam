@@ -10,8 +10,14 @@ public class Player : NetworkBehaviour
     private NetworkCharacterControllerPrototype _cc;
     public bool hasWon;
     private Animator playerAnim;
+    public AudioClip runClip;
+    public AudioClip jumpClip;
+    private AudioSource playerAudio;
+
+
     private void Awake() {
         _cc = GetComponent<NetworkCharacterControllerPrototype>();
+        playerAudio = GetComponent<AudioSource>();
     }
     public override void FixedUpdateNetwork()
     {
@@ -22,11 +28,13 @@ public class Player : NetworkBehaviour
             {
                 _cc.Jump(false);
                 playerAnim.SetBool("isJumping", true);
+                playerAudio.PlayOneShot(runClip);
             }
             data.direction.Normalize();
             _cc.Move(multiplier * data.direction * Runner.DeltaTime);
             playerAnim.SetBool("isRunning", true);
             playerAnim.SetBool("isJumping", false);
+            playerAudio.PlayOneShot(jumpClip, 1.0f);
         }
         else
         {
