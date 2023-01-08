@@ -17,28 +17,44 @@ public class Player : NetworkBehaviour
 
     private void Awake() {
         _cc = GetComponent<NetworkCharacterControllerPrototype>();
+        playerAnim = gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
     }
     public override void FixedUpdateNetwork()
     {
-        if (GetInput(out NetworkInputData data))
+        bool jumpRequested = false;
+        bool inputIdle = false;
 
+        if (GetInput(out NetworkInputData data))
         {
             if (data.jump)
             {
                 _cc.Jump(false);
-                playerAnim.SetBool("isJumping", true);
+                jumpRequested = true;
                 playerAudio.PlayOneShot(runClip);
             }
             data.direction.Normalize();
             _cc.Move(multiplier * data.direction * Runner.DeltaTime);
-            playerAnim.SetBool("isRunning", true);
-            playerAnim.SetBool("isJumping", false);
+            if (data.direction == Vector3.zero) {
+                inputIdle = true;
+            }
             playerAudio.PlayOneShot(jumpClip, 1.0f);
         }
-        else
+        
+        if ((_cc.Velocity == Vector3.zero || inputIdle) & _cc.IsGrounded)
         {
+            playerAnim.SetBool("isJumping", false);
             playerAnim.SetBool("isRunning", false);
+        }
+        else if ((!_cc.IsGrounded) || jumpRequested)
+        {
+            playerAnim.SetBool("isJumping", true);
+            playerAnim.SetBool("isRunning", false);
+        }
+        else if (_cc.IsGrounded)
+        {
+            playerAnim.SetBool("isJumping", false);
+            playerAnim.SetBool("isRunning", true);
         }
     }
 
