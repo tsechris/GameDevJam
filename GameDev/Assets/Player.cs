@@ -28,6 +28,7 @@ public class Player : NetworkBehaviour
             playerAnim.SetBool("isRunning", true);
             playerAnim.SetBool("isJumping", false);
         }    
+        playerAnim.SetBool("isRunning", false) ;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,7 +36,7 @@ public class Player : NetworkBehaviour
         if (other.gameObject.CompareTag("Sensor"))
         {
             hasWon = true;
-
+            //playerAnim.SetBool("hasWon", true) ;
         }
     }
 }
