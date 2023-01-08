@@ -415,7 +415,7 @@ MonoBehaviour:
   spawnLocation1: {fileID: 829458489}
   spawnLocation2: {fileID: 810202434}
   P1C: {fileID: 980845021}
-  P2C: {fileID: 1604521498}
+  P2C: {fileID: 2000176858}
   MainC: {fileID: 1643585809}
   NewC: {fileID: 1355958449}
 --- !u!4 &290947997
@@ -5933,7 +5933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &2000176859
 AudioListener:
   m_ObjectHideFlags: 0
