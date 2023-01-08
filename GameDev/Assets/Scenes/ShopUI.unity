@@ -821,8 +821,9 @@ GameObject:
   - component: {fileID: 441227989}
   - component: {fileID: 441227988}
   - component: {fileID: 441227987}
+  - component: {fileID: 441227990}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -892,7 +893,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 441227988}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 441227990}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: ButtonPressExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &441227988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,6 +944,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441227985}
   m_CullTransparentMesh: 1
+--- !u!114 &441227990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441227985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7ab00d9bb255f498cf4064ad434bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  CurrentMoneyValue: {fileID: 0}
 --- !u!1 &499709272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1105,7 @@ GameObject:
   - component: {fileID: 503831302}
   - component: {fileID: 503831301}
   - component: {fileID: 503831300}
+  - component: {fileID: 503831303}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1149,7 +1177,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 503831301}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 503831303}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: ButtonPressControlSwap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &503831301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,6 +1228,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503831298}
   m_CullTransparentMesh: 1
+--- !u!114 &503831303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503831298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7ab00d9bb255f498cf4064ad434bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  CurrentMoneyValue: {fileID: 0}
 --- !u!1 &527880392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,6 +1602,7 @@ GameObject:
   - component: {fileID: 746578001}
   - component: {fileID: 746578000}
   - component: {fileID: 746577999}
+  - component: {fileID: 746578002}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1619,7 +1674,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 746578000}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 746578002}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: ButtonPressJumpquest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &746578000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1658,6 +1725,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746577997}
   m_CullTransparentMesh: 1
+--- !u!114 &746578002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746577997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7ab00d9bb255f498cf4064ad434bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  CurrentMoneyValue: {fileID: 0}
 --- !u!1 &816415075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,6 +2578,7 @@ GameObject:
   - component: {fileID: 1140712889}
   - component: {fileID: 1140712888}
   - component: {fileID: 1140712887}
+  - component: {fileID: 1140712890}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2568,7 +2650,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1140712888}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1140712890}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: ButtonPressInkscreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1140712888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2607,6 +2701,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140712885}
   m_CullTransparentMesh: 1
+--- !u!114 &1140712890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140712885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7ab00d9bb255f498cf4064ad434bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  CurrentMoneyValue: {fileID: 0}
 --- !u!1 &1181607660
 GameObject:
   m_ObjectHideFlags: 0
@@ -3143,6 +3251,7 @@ GameObject:
   - component: {fileID: 1537510794}
   - component: {fileID: 1537510793}
   - component: {fileID: 1537510792}
+  - component: {fileID: 1537510795}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3214,7 +3323,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1537510793}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1537510795}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: ButtonPressCactus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1537510793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3253,6 +3374,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537510790}
   m_CullTransparentMesh: 1
+--- !u!114 &1537510795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537510790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7ab00d9bb255f498cf4064ad434bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  CurrentMoneyValue: {fileID: 0}
 --- !u!1 &1653298532
 GameObject:
   m_ObjectHideFlags: 0
@@ -3265,6 +3400,7 @@ GameObject:
   - component: {fileID: 1653298536}
   - component: {fileID: 1653298535}
   - component: {fileID: 1653298534}
+  - component: {fileID: 1653298537}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3336,7 +3472,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1653298535}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1653298537}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: ButtonPressQuicksand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1653298535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3375,6 +3523,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653298532}
   m_CullTransparentMesh: 1
+--- !u!114 &1653298537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653298532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7ab00d9bb255f498cf4064ad434bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 40
+  CurrentMoneyValue: {fileID: 2076644529}
 --- !u!1 &1807678672
 GameObject:
   m_ObjectHideFlags: 0
@@ -3387,6 +3549,7 @@ GameObject:
   - component: {fileID: 1807678676}
   - component: {fileID: 1807678675}
   - component: {fileID: 1807678674}
+  - component: {fileID: 1807678677}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3458,7 +3621,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1807678675}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1807678677}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: ButtonPressTumbleweed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1807678675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3497,6 +3672,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807678672}
   m_CullTransparentMesh: 1
+--- !u!114 &1807678677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807678672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7ab00d9bb255f498cf4064ad434bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  CurrentMoneyValue: {fileID: 0}
 --- !u!1 &2076644527
 GameObject:
   m_ObjectHideFlags: 0
