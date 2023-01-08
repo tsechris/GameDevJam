@@ -25,6 +25,7 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
   [SerializeField] private GameObject P1C;
   [SerializeField] private GameObject P2C;
   [SerializeField] private GameObject MainC;
+  [SerializeField] private GameObject NewC;
   // Counter
   private int spawnCounter = 0;
 
@@ -37,28 +38,35 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
       // Returns true if the object is on a active server I think
       Vector3 spawnPosition = new Vector3((player.RawEncoded%runner.Config.Simulation.DefaultPlayers)*3,1,0);
       // Get the spawn location
-      if (spawnCounter == 0) {
-        spawnPosition = spawnLocation1.transform.position;
-        NetworkObject networkPlayerObject = runner.Spawn(_playerPrefab, spawnPosition, Quaternion.identity, player);
-        _spawnedCharacters.Add(player, networkPlayerObject);
-        // Attach the camera to the player
-        GameObject.Find("P1C").GetComponent<CameraController>().player = networkPlayerObject.gameObject;
-        // Change the camera to P1C
-        MainC.SetActive(false);
-        P1C.SetActive(true);
-        spawnCounter++;
-      } else {
-        spawnPosition = spawnLocation2.transform.position;
-        spawnCounter--;
-        NetworkObject networkPlayerObject = runner.Spawn(_playerPrefab, spawnPosition, Quaternion.identity, player);
-        _spawnedCharacters.Add(player, networkPlayerObject);
-        // Attach the camera to the player
-        GameObject.Find("P2C").GetComponent<CameraController>().player = networkPlayerObject.gameObject;
-        // Change the camera to P2C
-        MainC.SetActive(false);
-        P2C.SetActive(true);
-      }
+      spawnPosition = spawnLocation1.transform.position;
+      NetworkObject networkPlayerObject = runner.Spawn(_playerPrefab, spawnPosition, Quaternion.identity, player);
+      _spawnedCharacters.Add(player, networkPlayerObject);
+      // Attach the camera to the player
+      // GameObject.Find("P1C").GetComponent<CameraController>().player = networkPlayerObject.gameObject;
+      // // Change the camera to P1C
+      MainC.SetActive(false);
+      NewC.SetActive(true);
+      P1C.SetActive(false);
+      P2C.SetActive(false);
+      
+      // P1C.SetActive(true);
+      // Debug.Log("Set the camera to P1C");
 
+    }
+    else {
+      Vector3 spawnPosition = spawnLocation1.transform.position;
+      NetworkObject networkPlayerObject = runner.Spawn(_playerPrefab, spawnPosition, Quaternion.identity, player);
+      _spawnedCharacters.Add(player, networkPlayerObject);
+      // Attach the camera to the player
+      // GameObject.Find("P2C").GetComponent<CameraController>().player = networkPlayerObject.gameObject;
+      // // Change the camera to P1C
+      MainC.SetActive(false);
+      NewC.SetActive(true);
+      P1C.SetActive(false);
+      P2C.SetActive(false);
+      // P2C.SetActive(true);
+      // // spawnCounter++;
+      // Debug.Log("Set the camera to P2C");
     }
   }
 
