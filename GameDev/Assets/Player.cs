@@ -31,14 +31,12 @@ public class Player : NetworkBehaviour
             {
                 _cc.Jump(false);
                 jumpRequested = true;
-                playerAudio.PlayOneShot(runClip);
             }
             data.direction.Normalize();
             _cc.Move(multiplier * data.direction * Runner.DeltaTime);
             if (data.direction == Vector3.zero) {
                 inputIdle = true;
             }
-            playerAudio.PlayOneShot(jumpClip, 1.0f);
         }
         
         if ((_cc.Velocity == Vector3.zero || inputIdle) & _cc.IsGrounded)
@@ -50,11 +48,17 @@ public class Player : NetworkBehaviour
         {
             playerAnim.SetBool("isJumping", true);
             playerAnim.SetBool("isRunning", false);
+            if (!playerAudio.isPlaying) {
+                playerAudio.PlayOneShot(jumpClip, 0.1f);
+            }
         }
         else if (_cc.IsGrounded)
         {
             playerAnim.SetBool("isJumping", false);
             playerAnim.SetBool("isRunning", true);
+            if (!playerAudio.isPlaying) {
+                playerAudio.PlayOneShot(runClip);
+            }
         }
     }
 
@@ -63,7 +67,7 @@ public class Player : NetworkBehaviour
         if (other.gameObject.CompareTag("Sensor"))
         {
             hasWon = true;
-            //playerAnim.SetBool("hasWon", true) ;
+            playerAnim.SetBool("hasWon", true) ;
         }
     }
 }
