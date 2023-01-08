@@ -10,7 +10,8 @@ public class ShopTransitions : MonoBehaviour
     [SerializeField] GameObject skillsShop;
     [SerializeField] GameObject changeToSkillsButton;
     [SerializeField] GameObject changeToObstaclesButton;
-    [SerializeField] int gameSceneIndex;
+    [SerializeField] GameObject gameSceneObject;
+    [SerializeField] GameObject shopParentObject;
     private Animator anim;
     private bool inObstaclesShop = false;
     void Start() {
@@ -59,6 +60,7 @@ public class ShopTransitions : MonoBehaviour
 
     public void ExitShop()
     {
-        // SceneManager.LoadScene(gameSceneIndex);
+        gameSceneObject.SetActive(true);
+        shopParentObject.SetActive(false);
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 public class MenuMethods : MonoBehaviour
 {
     [SerializeField] GameObject menuButtons;
-    [SerializeField] int gameSceneIndex;
+    [SerializeField] GameObject networkMenu;
+    [SerializeField] GameObject parentObject;
     private Animator anim;
     void Start() {
         anim = GetComponent<Animator>();
@@ -25,6 +26,7 @@ public class MenuMethods : MonoBehaviour
 
     public void LoadGameScene()
     {
-        //SceneManager.Load(gameSceneIndex);
+        networkMenu.SetActive(true);
+        parentObject.SetActive(false);
     }
 }
